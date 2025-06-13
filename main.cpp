@@ -37,5 +37,19 @@ int main() {
     cout << "Author: " << article.getAuthor()->getName() << " (" << article.getAuthor()->getEmail() << ")" << endl;
     cout << "Status: " << article.getStatus() << endl;
     
+    // Тест редактирования макета
+    cout << "\n=== Designer edits layout ===" << endl;
+    article = alice.editLayout(article, "Three-column responsive layout");
+    cout << "New layout: " << article.getLayout() << endl;
+
+    // Тест изменения статуса обратно на доработку
+    cout << "\n=== Editor requests revisions ===" << endl;
+    article = mike.changeState(article, "Needs Revision");
+    cout << "New status: " << article.getStatus() << endl;
+
+    // Тест информации о журналисте
+    cout << "\n=== Journalist info ===" << endl;
+    cout << "Name: " << john.getName() << "\nEmail: " << john.getEmail() << endl;
+    
     return 0;
 }
