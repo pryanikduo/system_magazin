@@ -17,3 +17,14 @@ Journalist* Article::getAuthor() const { return author; }
 void Article::setStatus(const string& newStatus) { status = newStatus; }
 void Article::setText(const string& newText) { text = newText; }
 void Article::setLayout(const string& newLayout) { layout = newLayout; }
+
+string Article::viewing() const {
+    ostringstream oss;
+    oss << "Article ID: " << id << "\n"
+        << "Title: " << title << "\n"
+        << "Status: " << status << "\n"
+        << "Author: " << (author ? author->getName() : "Unknown") << "\n"
+        << "Text: " << (text.empty() ? "[No text yet]" : text) << "\n"
+        << "Layout: " << (layout.empty() ? "[No layout yet]" : layout);
+    return oss.str();
+}
